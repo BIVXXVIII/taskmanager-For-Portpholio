@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Layaout from './components/layaout/Layaout';
+import Dashboard from './pages/Dashboard';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Groups from './pages/Groups';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={
+                    <Layaout>
+                        <Dashboard />
+                    </Layaout>
+                } />
+                <Route path='/groups' element={
+                    <Layaout>
+                        <Groups />
+                    </Layaout>
+                } />
+                <Route path='*' element={
+                    <Layaout>
+                        <div>Page not found</div>
+                    </Layaout>
+                } />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;

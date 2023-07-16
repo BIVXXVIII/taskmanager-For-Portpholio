@@ -1,13 +1,19 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+textarea, input[type='text']{
+    @apply border-2 border-white resize-none w-full min-w-[200px] px-2 py-1.5 rounded-md mb-2
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input, textarea{
+    @apply focus:border-blue-300/30 focus:outline-none
+}
+
+input[type='date']{
+    @apply px-2 py-1 rounded-lg mb-4
+}
+
+button{
+    @apply select-none
 }
