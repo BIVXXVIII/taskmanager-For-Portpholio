@@ -24,7 +24,7 @@ export default function CardGroups({ task }: CardGroupsProps) {
     return (
         <div>
             <h4>groups:</h4>
-            <div className='flex flex-wrap gap-1'>{task.group.map((group: Group) => <CardGroupBlock group={group} taskId={task.id} />)}
+            <div className='flex flex-wrap gap-1'>{task.group.map((group: Group) => <CardGroupBlock group={group} key={`${group.id}CardGroup`} taskId={task.id} />)}
             </div>
             <AddGroup allGroups={allGroups} task={task} />
 
